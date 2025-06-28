@@ -3,7 +3,7 @@ function updatePanel(selection) {
   if (!selection) {
     $('#align').addClass('align-off');
     $('#object-specific').html(canvas_panel);
-    $('#preset').append("<option value='custom'>Custom</option>");
+    $('#preset').append("<option value='custom'>自定义</option>");
     presets.forEach(function (preset) {
       $('#preset').append(
         "<option value='" +
@@ -966,7 +966,7 @@ function populateGrid(type) {
     $('#landing').remove();
     if (!flag) {
       $('#upload-tabs').after(
-        '<div id="landing" class="upload-landing"><div id="landing-text">Your uploaded images will show up here for easy access.</div></div>'
+        '<div id="landing" class="upload-landing"><div id="landing-text">您上传的图片将在此处显示，方便访问。</div></div>'
       );
     }
   } else if (type == 'videos-tab') {
@@ -994,7 +994,7 @@ function populateGrid(type) {
     $('#landing').remove();
     if (!flag) {
       $('#upload-tabs').after(
-        '<div id="landing" class="upload-landing"><div id="landing-text">Your uploaded videos will show up here for easy access.</div></div>'
+        '<div id="landing" class="upload-landing"><div id="landing-text">您上传的视频将在此处显示，方便访问。</div></div>'
       );
     }
   } else if (type == 'audio-tool') {
@@ -1152,7 +1152,7 @@ function scrollBottom() {
 }
 
 function addAnimatedText() {
-  var newtext = new AnimatedText('Your text', {
+  var newtext = new AnimatedText('您的文本', {
     left: artboard.get('left') + artboard.get('width') / 2,
     top: artboard.get('top') + artboard.get('height') / 2,
     preset: $(this).attr('data-id'),
@@ -1417,7 +1417,7 @@ function dragObject(e) {
           newTextbox(
             50,
             700,
-            'Add a heading',
+            '添加标题',
             canvasx - artboard.get('left'),
             canvasy - artboard.get('top'),
             drag.width(),
@@ -1428,7 +1428,7 @@ function dragObject(e) {
           newTextbox(
             22,
             500,
-            'Add a subheading',
+            '添加副标题',
             canvasx - artboard.get('left'),
             canvasy - artboard.get('top'),
             drag.width(),
@@ -1439,7 +1439,7 @@ function dragObject(e) {
           newTextbox(
             18,
             400,
-            'Add body text',
+            '添加正文',
             canvasx - artboard.get('left'),
             canvasy - artboard.get('top'),
             drag.width(),
@@ -1450,7 +1450,7 @@ function dragObject(e) {
           newTextbox(
             18,
             400,
-            'Your text',
+            '您的文本',
             canvasx - artboard.get('left'),
             canvasy - artboard.get('top'),
             drag.width(),
@@ -1508,7 +1508,7 @@ function dragObject(e) {
           newTextbox(
             50,
             700,
-            'Add a heading',
+            '添加标题',
             artboard.get('left') + artboard.get('width') / 2,
             artboard.get('top') + artboard.get('height') / 2,
             drag.width(),
@@ -1519,7 +1519,7 @@ function dragObject(e) {
           newTextbox(
             22,
             500,
-            'Add a subheading',
+            '添加副标题',
             artboard.get('left') + artboard.get('width') / 2,
             artboard.get('top') + artboard.get('height') / 2,
             drag.width(),
@@ -1530,7 +1530,7 @@ function dragObject(e) {
           newTextbox(
             18,
             400,
-            'Add body text',
+            '添加正文',
             artboard.get('left') + artboard.get('width') / 2,
             artboard.get('top') + artboard.get('height') / 2,
             drag.width(),
@@ -1541,7 +1541,7 @@ function dragObject(e) {
           newTextbox(
             18,
             400,
-            'Your text',
+            '您的文本',
             artboard.get('left') + artboard.get('width') / 2,
             artboard.get('top') + artboard.get('height') / 2,
             drag.width(),
@@ -1637,7 +1637,7 @@ function deleteMedia(e) {
   var key = $(this).parent().attr('data-key');
   if (
     window.confirm(
-      'Are you sure you want to permanently delete this asset? It will also remove any instances of it in the canvas.'
+      '您确定要永久删除此资源吗？这也会移除画布中该资源的所有实例。'
     )
   ) {
     deleteAsset(key);
@@ -1649,7 +1649,7 @@ $(document).on('mousedown', '.delete-media', deleteMedia);
 function saveLayerName() {
   $('.name-active').prop('readonly', true);
   if ($('.name-active').val() == '') {
-    $('.name-active').val('Untitled layer');
+    $('.name-active').val('未命名图层');
   }
   objects.find(
     (x) =>
@@ -1850,9 +1850,9 @@ function search() {
           });
         } else {
           $('#shapes-cont').html(
-            "<div id='no-results'>Sorry, we couldn't find any results for &#x22;" +
+            "<div id='no-results'>抱歉，我们找不到关于 &#x22;" +
               encodeURIComponent(value) +
-              '&#x22;. Please try a different query.</div>'
+              '&#x22; 的任何结果。请尝试其他关键词。</div>'
           );
         }
       });
@@ -1898,9 +1898,9 @@ function search() {
           });
         } else {
           $('#shapes-cont').html(
-            "<div id='no-results'>Sorry, we couldn't find any results for &#x22;" +
+            "<div id='no-results'>抱歉，我们找不到关于 &#x22;" +
               encodeURIComponent(value) +
-              '&#x22;. Please try a different query.</div>'
+              '&#x22; 的任何结果。请尝试其他关键词。</div>'
           );
         }
       });
@@ -1940,9 +1940,9 @@ function search() {
       });
       if (!flag) {
         $('#shapes-cont').html(
-          "<div id='no-results'>Sorry, we couldn't find any results for &#x22;" +
+          "<div id='no-results'>抱歉，我们找不到关于 &#x22;" +
             encodeURIComponent(value) +
-            '&#x22;. Please try a different query.</div>'
+            '&#x22; 的任何结果。请尝试其他关键词。</div>'
         );
       }
     }
@@ -1975,9 +1975,9 @@ function search() {
       });
       if (!flag) {
         $('#shapes-cont').html(
-          "<div id='no-results'>Sorry, we couldn't find any results for &#x22;" +
+          "<div id='no-results'>抱歉，我们找不到关于 &#x22;" +
             encodeURIComponent(value) +
-            '&#x22;. Please try a different query.</div>'
+            '&#x22; 的任何结果。请尝试其他关键词。</div>'
         );
       }
     }

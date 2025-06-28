@@ -533,7 +533,7 @@ function updateRecordCanvas() {
 
 // Download recording
 function downloadRecording(chunks) {
-  $('#download-real').html('Downloading...');
+  $('#download-real').html('下载中...');
   if ($('input[name=radio]:checked').val() == 'webm') {
     var url = URL.createObjectURL(
       new Blob(chunks, {
@@ -557,7 +557,7 @@ function downloadRecording(chunks) {
     });
     canvas.renderAll();
     resizeCanvas();
-    $('#download-real').html('Download');
+    $('#download-real').html('下载');
     $('#download-real').removeClass('downloading');
     updateRecordCanvas();
   } else if ($('input[name=radio]:checked').val() == 'mp4') {
@@ -4042,7 +4042,7 @@ function audioUpload() {
     if (files.length == 1) {
       if (files[0]['type'].split('/')[0] === 'audio') {
         if (files[0].size / 1024 / 1024 <= 10) {
-          $('#audio-upload-button').html('Uploading...');
+          $('#audio-upload-button').html('上传中...');
           $('#audio-upload-button').addClass('uploading');
           saveAudio(files[0]);
         } else {

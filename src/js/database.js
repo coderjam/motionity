@@ -419,7 +419,7 @@ async function saveFile(thumbnail, file, type, name, place, hidden) {
     populateGrid('videos-tab');
   }
   $('#upload-button').html(
-    "<img src='assets/upload.svg'> Upload media"
+    "<img src='assets/upload.svg'> 上传媒体"
   );
   $('#upload-button').removeClass('uploading');
   if (place) {
@@ -578,7 +578,7 @@ function readTextFile(file, callback) {
 }
 
 async function importProject(e) {
-  $('#import-project span').html('Importing...');
+  $('#import-project span').html('导入中...');
   var file = e.target.files[0];
   var path = (window.URL || window.webkitURL).createObjectURL(file);
   readTextFile(path, function (text) {
@@ -595,12 +595,12 @@ async function importProject(e) {
         .doc({ id: 1 })
         .update(data.project[0])
         .then((response) => {
-          $('#import-project span').html('Import');
+          $('#import-project span').html('导入');
           hideModals();
           loadProject();
         });
     } else {
-      alert('Wrong file type');
+      alert('文件类型错误');
     }
   });
 }
@@ -610,7 +610,7 @@ function importHandle() {
 }
 
 function exportProject() {
-  $('#export-project span').html('Exporting...');
+  $('#export-project span').html('导出中...');
   db.collection('projects')
     .get()
     .then((project) => {
@@ -628,13 +628,13 @@ function exportProject() {
               .appendTo('body')
               .click(function () {
                 $(this).remove();
-                $('#export-project span').html('Export');
+                $('#export-project span').html('导出');
               })[0]
               .click();
           });
       } else {
-        alert('Empty project');
-        $('#export-project span').html('Export');
+        alert('项目为空');
+        $('#export-project span').html('导出');
       }
     });
 }
@@ -646,7 +646,7 @@ $(document).on('change', '#import', importProject);
 function clearProject() {
   if (
     window.confirm(
-      'Are you sure you want to clear this project? This action cannot be undone.'
+      '确定要清除此项目吗？此操作无法撤销。'
     )
   ) {
     db.collection('projects').delete();

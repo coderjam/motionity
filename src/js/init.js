@@ -99,47 +99,47 @@ if (isChrome) {
 }
 var presets = [
   {
-    name: 'Dribbble shot',
+    name: 'Dribbble 截图',
     id: 'dribbble',
     width: 1600,
     height: 1200,
   },
-  { name: 'Facebook post', id: 'facebook', width: 1280, height: 720 },
+  { name: 'Facebook 帖子', id: 'facebook', width: 1280, height: 720 },
   {
-    name: 'Facebook ad',
+    name: 'Facebook 广告',
     id: 'facebook-ad',
     width: 1080,
     height: 1080,
   },
-  { name: 'Youtube video', id: 'youtube', width: 1920, height: 1080 },
+  { name: 'Youtube 视频', id: 'youtube', width: 1920, height: 1080 },
   {
-    name: 'Instagram video',
+    name: 'Instagram 视频',
     id: 'instagram-id',
     width: 1080,
     height: 1920,
   },
   {
-    name: 'Instagram stories',
+    name: 'Instagram 故事',
     id: 'instagram-stories',
     width: 1080,
     height: 1920,
   },
-  { name: 'Twitter video', id: 'twitter', width: 1280, height: 720 },
-  { name: 'Snapchat ad', id: 'snapchat', width: 1080, height: 1920 },
+  { name: 'Twitter 视频', id: 'twitter', width: 1280, height: 720 },
+  { name: 'Snapchat 广告', id: 'snapchat', width: 1080, height: 1920 },
   {
-    name: 'LinkedIn video',
+    name: 'LinkedIn 视频',
     id: 'linkedin',
     width: 1920,
     height: 1080,
   },
   {
-    name: 'Product Hunt thumbnail',
+    name: 'Product Hunt 缩略图',
     id: 'product-hunt',
     width: 600,
     height: 600,
   },
   {
-    name: 'Pinterest ad',
+    name: 'Pinterest 广告',
     id: 'pinterest',
     width: 1080,
     height: 1920,
@@ -173,84 +173,84 @@ $.ajax({
 
 // Panel variants
 const canvas_panel =
-  '<div id="canvas-properties" class="panel-section"><p class="property-title">Canvas settings</p><table><tr><th class="name-col">Preset</th><th class="value-col"><select id="preset"></select></th></tr><tr><th class="name-col">Size</th><th class="value-col"><div id="canvas-w" class="property-input" data-label="W"><input type="number" min=1 value=1000></div><div id="canvas-h" class="property-input" data-label="H"><input type="number" value=1000 min=1></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="canvas-color" class="object-color"><div id="color-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="canvas-color-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Duration</th><th class="value-col" id="duration-cell"><div id="canvas-duration" class="property-input" data-label="s"><input type="number" value=15.00></div></th></tr></table></div>';
+  '<div id="canvas-properties" class="panel-section"><p class="property-title">画布设置</p><table><tr><th class="name-col">预设</th><th class="value-col"><select id="preset"></select></th></tr><tr><th class="name-col">尺寸</th><th class="value-col"><div id="canvas-w" class="property-input" data-label="宽"><input type="number" min=1 value=1000></div><div id="canvas-h" class="property-input" data-label="高"><input type="number" value=1000 min=1></div></th></tr><tr><th class="name-col">颜色</th><th class="value-col"><div id="canvas-color" class="object-color"><div id="color-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="canvas-color-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">时长</th><th class="value-col" id="duration-cell"><div id="canvas-duration" class="property-input" data-label="秒"><input type="number" value=15.00></div></th></tr></table></div>';
 const object_panel =
-  '<div id="layout-properties" class="panel-section"><p class="property-title">Layout</p><table><tr><th class="name-col">Position</th><th class="value-col"><div id="object-x" class="property-input" data-label="X"><input type="number" value=1000></div><div id="object-y" class="property-input" data-label="Y"><input value=1000 type="number"></div></th></tr><tr><th class="name-col">Size</th><th class="value-col"><div id="object-w" class="property-input" data-label="W"><input type="number" min=1 value=1000></div><div id="object-h" class="property-input" data-label="H"><input type="number" value=1000 min=1></div></th></tr><tr><th class="name-col">Rotation</th><th class="value-col" id="duration-cell"><div id="object-r" class="property-input" data-label="&#176;"><input type="number" min=0 max=360 value=0></div></th></tr></table></div>';
+  '<div id="layout-properties" class="panel-section"><p class="property-title">布局</p><table><tr><th class="name-col">位置</th><th class="value-col"><div id="object-x" class="property-input" data-label="X"><input type="number" value=1000></div><div id="object-y" class="property-input" data-label="Y"><input value=1000 type="number"></div></th></tr><tr><th class="name-col">尺寸</th><th class="value-col"><div id="object-w" class="property-input" data-label="宽"><input type="number" min=1 value=1000></div><div id="object-h" class="property-input" data-label="高"><input type="number" value=1000 min=1></div></th></tr><tr><th class="name-col">旋转</th><th class="value-col" id="duration-cell"><div id="object-r" class="property-input" data-label="&#176;"><input type="number" min=0 max=360 value=0></div></th></tr></table></div>';
 const back_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Layer</p><table><tr><th class="name-col">Opacity</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Mask</th><th class="value-col"><select id="masks"><option value="none">None</option></select></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图层</p><table><tr><th class="name-col">不透明度</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">蒙版</th><th class="value-col"><select id="masks"><option value="none">无</option></select></th></tr></table></div>';
 const image_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Layer</p><table><tr><th class="name-col">Opacity</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Mask</th><th class="value-col"><select id="masks"><option value="none">None</option></select></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图层</p><table><tr><th class="name-col">不透明度</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">蒙版</th><th class="value-col"><select id="masks"><option value="none">无</option></select></th></tr></table></div>';
 const selection_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Layer</p><table><tr><th class="name-col">Opacity</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Group</th><th class="value-col"><div id="group-objects">Group selection</div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图层</p><table><tr><th class="name-col">不透明度</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">组</th><th class="value-col"><div id="group-objects">组合选择</div></th></tr></table></div>';
 const group_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Layer</p><table><tr><th class="name-col">Opacity</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Mask</th><th class="value-col"><select id="masks"><option value="none">None</option></select></th></tr><tr><th class="name-col">Group</th><th class="value-col"><div id="ungroup-objects">Ungroup selection</div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图层</p><table><tr><th class="name-col">不透明度</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">蒙版</th><th class="value-col"><select id="masks"><option value="none">无</option></select></th></tr><tr><th class="name-col">组</th><th class="value-col"><div id="ungroup-objects">取消组合</div></th></tr></table></div>';
 const other_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Layer</p><table><tr><th class="name-col">Opacity</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Mask</th><th class="value-col"><select id="masks"><option value="none">None</option></select></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图层</p><table><tr><th class="name-col">不透明度</th><th class="value-col"><div id="select-opacity"></div><div id="object-o" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">蒙版</th><th class="value-col"><select id="masks"><option value="none">无</option></select></th></tr></table></div>';
 const shape_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Rectangle</p><table><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Radius</th><th class="value-col" id="duration-cell"><div id="object-corners" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">矩形</p><table><tr><th class="name-col">颜色</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">圆角</th><th class="value-col" id="duration-cell"><div id="object-corners" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
 const path_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Shape</p><table><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">形状</p><table><tr><th class="name-col">颜色</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
 const text_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Text</p><table><tr><th class="name-col">Font</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">Align</th><th class="value-col"><div class="align-text" id="align-text-left"><img src="assets/align-text-left.svg"></div><div class="align-text" id="align-text-center"><img src="assets/align-text-center.svg"></div><div class="align-text" id="align-text-right"><img src="assets/align-text-right.svg"></div><div class="align-text" id="align-text-justify"><img src="assets/align-text-justify.svg"></div></th></tr><tr><th class="name-col">Format</th><th class="value-col"><div class="format-text" id="format-bold"><img src="assets/bold.svg"></div><div class="format-text" id="format-italic"><img src="assets/italic.svg"></div><div class="format-text" id="format-underline"><img src="assets/underline.svg"></div><div class="format-text" id="format-strike"><img src="assets/strike.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Letter</th><th class="value-col"><div id="select-letter"></div><div id="text-h" class="property-input" data-label="%"><input type="number" value=1></div></th></tr><tr><th class="name-col">Line</th><th class="value-col"><div id="select-line"></div><div id="text-v" class="property-input" data-label="%"><input type="number" value=1></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">文本</p><table><tr><th class="name-col">字体</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">对齐</th><th class="value-col"><div class="align-text" id="align-text-left"><img src="assets/align-text-left.svg"></div><div class="align-text" id="align-text-center"><img src="assets/align-text-center.svg"></div><div class="align-text" id="align-text-right"><img src="assets/align-text-right.svg"></div><div class="align-text" id="align-text-justify"><img src="assets/align-text-justify.svg"></div></th></tr><tr><th class="name-col">格式</th><th class="value-col"><div class="format-text" id="format-bold"><img src="assets/bold.svg"></div><div class="format-text" id="format-italic"><img src="assets/italic.svg"></div><div class="format-text" id="format-underline"><img src="assets/underline.svg"></div><div class="format-text" id="format-strike"><img src="assets/strike.svg"></div></th></tr><tr><th class="name-col">颜色</th><th class="value-col"><div id="object-color-fill" class="object-color"><div id="color-fill-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-fill-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">字间距</th><th class="value-col"><div id="select-letter"></div><div id="text-h" class="property-input" data-label="%"><input type="number" value=1></div></th></tr><tr><th class="name-col">行高</th><th class="value-col"><div id="select-line"></div><div id="text-v" class="property-input" data-label="%"><input type="number" value=1></div></th></tr></table></div>';
 const stroke_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Stroke</p><table><tr><th class="name-col">Type</th><th class="value-col left-col"><div class="line-join" id="miter"><img src="assets/miter.svg"></div><div class="line-join" id="bevel"><img src="assets/bevel.svg"></div><div class="line-join" id="round"><img src="assets/round.svg"></div><div class="line-join" id="small-dash"><img src="assets/dash2.svg"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-stroke" class="object-color"><div id="color-stroke-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-stroke-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Width</th><th class="value-col" id="duration-cell"><div id="object-stroke" class="property-input" data-label="px"><input type="number" min=0 value=0></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">描边</p><table><tr><th class="name-col">类型</th><th class="value-col left-col"><div class="line-join" id="miter"><img src="assets/miter.svg"></div><div class="line-join" id="bevel"><img src="assets/bevel.svg"></div><div class="line-join" id="round"><img src="assets/round.svg"></div><div class="line-join" id="small-dash"><img src="assets/dash2.svg"></div></th></tr><tr><th class="name-col">颜色</th><th class="value-col"><div id="object-color-stroke" class="object-color"><div id="color-stroke-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-stroke-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">宽度</th><th class="value-col" id="duration-cell"><div id="object-stroke" class="property-input" data-label="px"><input type="number" min=0 value=0></div></th></tr></table></div>';
 const shadow_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Shadow</p><table><tr><th class="name-col">Offset</th><th class="value-col"><div id="object-shadow-x" class="property-input" data-label="X"><input type="number" value=0></div><div id="object-shadow-y" class="property-input" data-label="Y"><input value=0 type="number"></div></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="object-color-shadow" class="object-color"><div id="color-shadow-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-shadow-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">Blur</th><th class="value-col" id="duration-cell"><div id="object-blur" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">阴影</p><table><tr><th class="name-col">偏移</th><th class="value-col"><div id="object-shadow-x" class="property-input" data-label="X"><input type="number" value=0></div><div id="object-shadow-y" class="property-input" data-label="Y"><input value=0 type="number"></div></th></tr><tr><th class="name-col">颜色</th><th class="value-col"><div id="object-color-shadow" class="object-color"><div id="color-shadow-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="object-color-shadow-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr><tr><th class="name-col">模糊</th><th class="value-col" id="duration-cell"><div id="object-blur" class="property-input" data-label="px"><input type="number" value=0 min=0></div></th></tr></table></div>';
 const image_more_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Image</p><div id="image-buttons"><div id="filters-button"><img src="assets/filters.svg"> Edit filters</div><div id="crop-image"><img src="assets/crop-icon.svg">Crop image</div></div></div></hr>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">图片</p><div id="image-buttons"><div id="filters-button"><img src="assets/filters.svg"> 编辑滤镜</div><div id="crop-image"><img src="assets/crop-icon.svg">裁剪图片</div></div></div></hr>';
 const video_more_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Video</p><div id="image-buttons"><div id="filters-button" class="filters-video"><img src="assets/filters.svg"> Edit filters</div></div></div></hr>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">视频</p><div id="image-buttons"><div id="filters-button" class="filters-video"><img src="assets/filters.svg"> 编辑滤镜</div></div></div></hr>';
 const animated_text_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Text</p><table><tr><th class="name-col">Content</th><th class="value-col" id="duration-cell"><div id="animated-text" class="property-input" data-label=""><input id="animatedinput" type="text" value="text"><div id="animatedset">Set</div></div></th></tr><tr><th class="name-col">Font</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">Color</th><th class="value-col"><div id="text-color" class="object-color"><div id="color-text-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="color-text-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">文本</p><table><tr><th class="name-col">内容</th><th class="value-col" id="duration-cell"><div id="animated-text" class="property-input" data-label=""><input id="animatedinput" type="text" value="文本"><div id="animatedset">设置</div></div></th></tr><tr><th class="name-col">字体</th><th class="value-col"><select id="font-picker"></select></th></tr><tr><th class="name-col">颜色</th><th class="value-col"><div id="text-color" class="object-color"><div id="color-text-side" class="color-picker"></div><input value="#FFFFFF" disabled="disabled"></div><div id="color-text-opacity" class="property-input" data-label="%"><input type="number" value=100></div></th></tr></table></div>';
 const start_animation_panel =
-  '<hr><div id="back-properties" class="panel-section"><p class="property-title">Start animation</p><table><tr><th class="name-col">Preset</th><th class="value-col"><select id="preset-picker"></select></th></tr><tr><th class="name-col">Easing</th><th class="value-col"><select id="easing-picker"><option value="linear">Linear</option><option value="easeInQuad">Ease in</option><option value="easeOutQuad">Ease out</option><option value="easeinOutQuad">Ease in-out</option><option value="easeOutInQuad">Ease out-in</option><option value="easeInBounce">Ease in bounce</option><option value="easeOutBounce">Ease out bounce</option><option value="easeinOutBounce">Ease in-out bounce</option><option value="easeOutInBouce">Ease out-in bounce</option><option value="easeOutInBouce">Ease out-in bounce</option><option value="easeInSine">Ease in sine</option><option value="easeOutSine">Ease out sine</option><option value="easeinOutSine">Ease in-out sine</option><option value="easeOutInSine">Ease out-in sine</option><option value="easeOutInSine">Ease out-in sine</option><option value="easeInCubic">Ease in cubic</option><option value="easeOutCubic">Ease out cubic</option><option value="easeinOutCubic">Ease in-out cubic</option><option value="easeOutInCubic">Ease out-in cubic</option><option value="easeOutInCubic">Ease out-in cubic</option></select></th></tr><tr><th class="name-col">Order</th><th class="value-col"><div id="order-toggle"><div id="order-backward" class="order-toggle-item">Backward</div><div id="order-forward" class="order-toggle-item order-toggle-item-active">Forward</div></div></th></tr><tr><th class="name-col">Order</th><th class="value-col"><div id="order-toggle"><div id="type-letters" class="order-toggle-item-2">Letters</div><div id="type-words" class="order-toggle-item-2 order-toggle-item-active-2">Words</div></div></th></tr><tr><th class="name-col">Duration</th><th class="value-col" id="duration-cell"><div id="animated-text-duration" class="property-input" data-label="s"><input id="durationinput" type="number" value="0"></div></th></tr></table></div>';
+  '<hr><div id="back-properties" class="panel-section"><p class="property-title">开始动画</p><table><tr><th class="name-col">预设</th><th class="value-col"><select id="preset-picker"></select></th></tr><tr><th class="name-col">缓动</th><th class="value-col"><select id="easing-picker"><option value="linear">线性</option><option value="easeInQuad">缓入</option><option value="easeOutQuad">缓出</option><option value="easeinOutQuad">缓入缓出</option><option value="easeOutInQuad">缓出缓入</option><option value="easeInBounce">弹性缓入</option><option value="easeOutBounce">弹性缓出</option><option value="easeinOutBounce">弹性缓入缓出</option><option value="easeOutInBouce">弹性缓出缓入</option><option value="easeOutInBouce">弹性缓出缓入</option><option value="easeInSine">正弦缓入</option><option value="easeOutSine">正弦缓出</option><option value="easeinOutSine">正弦缓入缓出</option><option value="easeOutInSine">正弦缓出缓入</option><option value="easeOutInSine">正弦缓出缓入</option><option value="easeInCubic">立方缓入</option><option value="easeOutCubic">立方缓出</option><option value="easeinOutCubic">立方缓入缓出</option><option value="easeOutInCubic">立方缓出缓入</option><option value="easeOutInCubic">立方缓出缓入</option></select></th></tr><tr><th class="name-col">顺序</th><th class="value-col"><div id="order-toggle"><div id="order-backward" class="order-toggle-item">倒序</div><div id="order-forward" class="order-toggle-item order-toggle-item-active">正序</div></div></th></tr><tr><th class="name-col">类型</th><th class="value-col"><div id="order-toggle"><div id="type-letters" class="order-toggle-item-2">字母</div><div id="type-words" class="order-toggle-item-2 order-toggle-item-active-2">单词</div></div></th></tr><tr><th class="name-col">时长</th><th class="value-col" id="duration-cell"><div id="animated-text-duration" class="property-input" data-label="秒"><input id="durationinput" type="number" value="0"></div></th></tr></table></div>';
 const audio_panel =
-  '<div id="layout-properties" class="panel-section"><p class="property-title">Audio</p><table><tr><th class="name-col">Volume</th><th class="value-col" id="duration-cell"><div id="object-volume" class="property-input" data-label="%"><input type="number" value=0></div></th></tr></table></div>';
+  '<div id="layout-properties" class="panel-section"><p class="property-title">音频</p><table><tr><th class="name-col">音量</th><th class="value-col" id="duration-cell"><div id="object-volume" class="property-input" data-label="%"><input type="number" value=0></div></th></tr></table></div>';
 
 // Browser variants
 const shape_browser =
-  '<div id="search-fixed"><p class="property-title">Objects</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="Search..."><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">Go</div></div></div><div id="shapes-cont"><p class="row-title">Shapes</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">Emojis</p><div class="gallery-row" id="emojis-row"></div></div>';
+  '<div id="search-fixed"><p class="property-title">对象</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="搜索..."><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">搜索</div></div></div><div id="shapes-cont"><p class="row-title">形状</p><div class="gallery-row" id="shapes-row"></div><p class="row-title">表情</p><div class="gallery-row" id="emojis-row"></div></div>';
 const image_browser =
-  '<div id="search-fixed"><p class="property-title">Images</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="Search..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="assets/pixabay.svg"></a><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">Go</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Browse millions of high quality images from Pixabay. Use the search bar above or choose from popular categories below.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
+  '<div id="search-fixed"><p class="property-title">图片</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="搜索..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="assets/pixabay.svg"></a><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">搜索</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">从Pixabay浏览数百万高质量图片。使用上方搜索栏或从下面的热门分类中选择。</div><div id="categories"></div></div><div id="images-grid"></div></div>';
 const text_browser =
-  '<div id="search-fixed"><p class="property-title">Text</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="Search..."><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">Go</div></div></div><div id="shapes-cont"><p class="row-title">Basic text</p><div id="heading-text" data-font="Inter" class="add-text noselect">Add a heading</div><div id="subheading-text" data-font="Inter" class="add-text noselect">Add a subheading</div><div id="body-text" data-font="Inter" class="add-text noselect">Add body text</div></div>';
+  '<div id="search-fixed"><p class="property-title">文本</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="搜索..."><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">搜索</div></div></div><div id="shapes-cont"><p class="row-title">基本文本</p><div id="heading-text" data-font="Inter" class="add-text noselect">添加标题</div><div id="subheading-text" data-font="Inter" class="add-text noselect">添加副标题</div><div id="body-text" data-font="Inter" class="add-text noselect">添加正文</div></div>';
 const video_browser =
-  '<div id="search-fixed"><p class="property-title">Videos</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="Search..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="assets/pixabay.svg"></a><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">Go</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">Browse millions of high quality images from Pixabay. Use the search bar above or choose from popular categories below.</div><div id="categories"></div></div><div id="images-grid"></div></div>';
+  '<div id="search-fixed"><p class="property-title">视频</p><img id="collapse" src="assets/collapse.svg"><div id="browser-search"><input placeholder="搜索..."><a href="https://pixabay.com" target="_blank" id="pixabay"><img src="assets/pixabay.svg"></a><img src="assets/search.svg" id="search-icon"><img src="assets/delete.svg" id="delete-search"><div id="search-button">搜索</div></div></div><div id="shapes-cont"><div id="landing"><div id="landing-text">从Pixabay浏览数百万高质量视频。使用上方搜索栏或从下面的热门分类中选择。</div><div id="categories"></div></div><div id="images-grid"></div></div>';
 const upload_browser =
-  '<div id="search-fixed"><p class="property-title">Uploads</p><div id="upload-button"><img src="assets/upload.svg"> Upload media</div><img id="collapse" src="assets/collapse.svg"><div id="upload-tabs"><div id="images-tab" class="upload-tab upload-tab-active">Images</div><div id="videos-tab" class="upload-tab">Videos</div></div></div><div id="images-grid"></div>';
+  '<div id="search-fixed"><p class="property-title">上传</p><div id="upload-button"><img src="assets/upload.svg"> 上传媒体</div><img id="collapse" src="assets/collapse.svg"><div id="upload-tabs"><div id="images-tab" class="upload-tab upload-tab-active">图片</div><div id="videos-tab" class="upload-tab">视频</div></div></div><div id="images-grid"></div>';
 const audio_browser =
-  '<div id="search-fixed" class="audio-browser"><p class="property-title">Audio</p><div id="audio-upload-button"><img src="assets/upload.svg"> Upload audio</div><img id="collapse" src="assets/collapse.svg"></div><div id="audio-list-parent"><div id="landing-text" class="audio-landing-text">Audio provided by Pixabay. Browse millions of assets from Pixabay by <a href="https://pixabay.com/music/" target="_blank">clicking here.</a></div><div id="audio-list"></div></div>';
+  '<div id="search-fixed" class="audio-browser"><p class="property-title">音频</p><div id="audio-upload-button"><img src="assets/upload.svg"> 上传音频</div><img id="collapse" src="assets/collapse.svg"></div><div id="audio-list-parent"><div id="landing-text" class="audio-landing-text">音频由Pixabay提供。<a href="https://pixabay.com/music/" target="_blank">点击这里</a>浏览Pixabay上的数百万素材。</div><div id="audio-list"></div></div>';
 
 // Text animation list
 var text_animation_list = [
-  { name: 'fade in', label: 'Fade in', src: 'assets/fade-in.svg' },
+  { name: 'fade in', label: '淡入', src: 'assets/fade-in.svg' },
   {
     name: 'typewriter',
-    label: 'Typewriter',
+    label: '打字机',
     src: 'assets/typewriter.svg',
   },
   {
     name: 'slide top',
-    label: 'Slide top',
+    label: '从上滑入',
     src: 'assets/slide-top.svg',
   },
   {
     name: 'slide bottom',
-    label: 'Slide bottom',
+    label: '从下滑入',
     src: 'assets/slide-bottom.svg',
   },
   {
     name: 'slide left',
-    label: 'Slide left',
+    label: '从左滑入',
     src: 'assets/slide-left.svg',
   },
   {
     name: 'slide right',
-    label: 'Slide right',
+    label: '从右滑入',
     src: 'assets/slide-right.svg',
   },
-  { name: 'scale', label: 'Scale', src: 'assets/scale.svg' },
-  { name: 'shrink', label: 'Shrink', src: 'assets/shrink.svg' },
+  { name: 'scale', label: '缩放', src: 'assets/scale.svg' },
+  { name: 'shrink', label: '收缩', src: 'assets/shrink.svg' },
 ];
 
 // Shapes list
